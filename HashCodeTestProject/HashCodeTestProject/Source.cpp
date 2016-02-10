@@ -12,8 +12,8 @@ int main()
 
 	Scanner* scanner = new Scanner(table);
 	scanner->scan_input();
-
-
+	scanner->scan_table();
+	scanner->print_commands();
 
 	system("PAUSE");
 	return 0;
