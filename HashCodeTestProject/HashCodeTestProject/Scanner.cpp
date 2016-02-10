@@ -44,3 +44,34 @@ void Scanner::scan_input()
 	cout << endl << "Error reading a file" << endl;
 
 }
+
+
+void Scanner::scan_table() {
+	int taby = 10;
+	int tabx = 10;
+	int *position;
+	bool check = false;
+	bool exit = false;
+	int i = 0;
+	int j = 0;
+	while (i<taby&&j<tabx) {
+		if (table[i][j] == 1) {
+			check == true;
+			 position = new int[2];
+			 position[0] = i;
+			 position[1] = j;
+			 line_horizontal.push_back(position);
+		}
+		else if(table[i][j] != 1 && check==false){
+			j++;
+			continue;
+		}
+		else {
+			int *pos = line_horizontal[0];
+			int j = pos[1];
+
+
+
+		}
+	}
+}
