@@ -25,7 +25,16 @@ void Table::init_table(int r, int c)
 
 void Table::set(int i, int j, int value)
 {
-	this->tab[i][j] = value;
+	tab[i][j] = value;
+}
+
+int Table::get(int i, int j)
+{
+	if ((i < r)&&(j < c)) {
+		return tab[i][j];
+	}
+	else
+		return 0;
 }
 
 void Table::print_table()

@@ -1,4 +1,7 @@
 #pragma once
+#include<vector>
+#include<string>
+
 class Table
 {
 public:
@@ -6,9 +9,13 @@ public:
 	~Table();
 	void init_table(int, int );
 	void set(int, int, int);
+	int get(int, int);
 	void print_table();
-private:
 	int r; int c;
+private:
+
+	
+	
 	int ** tab;
 };
 
