@@ -71,6 +71,7 @@ void Scanner::scan_input()
 
 
 void Scanner::scan_table() {
+	init_test_table();
 	int taby = 10;
 	int tabx = 10;
 	int *position;
@@ -134,6 +135,7 @@ void Scanner::scan_table() {
 			j = 0;
 		}
 	}
+
 }
 
 void Scanner::print_commands() {
@@ -144,4 +146,42 @@ void Scanner::print_commands() {
 		cout << "no commands" << endl;
 	else
 		cout << commands.size() << endl;
+}
+
+void Scanner::init_test_table()
+{
+	test = new Table();
+	test->init_table(r, c);
+	for (int i = 0; i < r; i++)
+	{
+		for (int j = 0; j < c; j++)
+		{
+			test->set(i, j, table->get(i, j));
+		}
+	}
+}
+
+void Scanner::table_test()
+{
+	bool kukle = true;
+	for (int i = 0; i < r; i++)
+	{
+		for (int j = 0; j < c; j++)
+		{
+			if (!(test->get(i, j) == 1 && table->get(i, j) == 2
+				|| test->get(i, j) == 0 && table->get(i, j) == 0))
+			{
+				cout << endl << "Correctness check error";
+				kukle = false;
+			}
+				
+		}
+	}
+	table->print_table();
+	if (kukle)
+		cout << endl << "Correctness test successful!"<<endl;
+	else
+		cout << endl << "Correctness test failed"<<endl;
+	
+
 }
