@@ -34,7 +34,7 @@ void Table::print_table()
 	{
 		for (int j = 0; j < c; j++)
 		{
-			cout << tab[i][i] << " ";
+			cout << tab[i][j];
 
 		}
 		cout << endl;

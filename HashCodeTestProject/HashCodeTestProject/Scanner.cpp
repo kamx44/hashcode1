@@ -49,16 +49,13 @@ void Scanner::scan_input()
 				getline(file, sample_string);
 				for (int j = 0; j < c; j++)
 				{
-					if (sample_string[j] == '#')
+					if (sample_string.at(j) == '#')
 						table->set(i, j, 1);				
 					else
 						table->set(i, j, 0);
-				}
-
-				
-				
-				i++;
+				}			
 			}
+
 			table->print_table();
 
 		}
