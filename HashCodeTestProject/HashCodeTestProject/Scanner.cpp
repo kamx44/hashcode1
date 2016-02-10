@@ -33,15 +33,39 @@ void Scanner::scan_input()
 		{
 			getline(file,sample_string);
 			r++;
-
-
 		}
 
-		cout << "Rows: " << r;
-		cout << "Columns: " << c;
+		//cout << "Rows: " << r;
+		//cout << "Columns: " << c;
+		table->init_table(r, c); // Initializes a table representing input
+		file.close();
+		file.open("right_angle.in", ios::in);
+		if (file.good() == true)
+		{
+			getline(file, sample_string);
+			//int i = 0;
+			for (int i = 0; i < r;i++)
+			{
+				getline(file, sample_string);
+				for (int j = 0; j < c; j++)
+				{
+					if (sample_string.at(j) == '#')
+						table->set(i, j, 1);				
+					else
+						table->set(i, j, 0);
+				}			
+			}
+
+			table->print_table();
+
+		}
+		else
+			cout << endl << "Error reading a file" << endl;
+
 
 	}
-	cout << endl << "Error reading a file" << endl;
+	else
+		cout << endl << "Error reading a file" << endl;
 
 }
 
