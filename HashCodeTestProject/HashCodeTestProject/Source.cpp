@@ -14,7 +14,7 @@ int main()
 	scanner->scan_input();
 	scanner->scan_table();
 	scanner->print_commands();
-
+	scanner->table_test();
 	system("PAUSE");
 	return 0;
 }
